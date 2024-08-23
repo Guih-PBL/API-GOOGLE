@@ -1,0 +1,16 @@
+function enviarLinkParaChat() {
+  var urlPlanilha = "https://docs.google.com/spreadsheets/d/1auO2BynbdQz1WngrGKYWjMsFZe5NmsuCl1bXLCypo78/edit?usp=sharing";
+  var mensagem = "Segue Solicitação de Requisição: " + urlPlanilha;
+
+  var urlGoogleChat = "https://chat.googleapis.com/v1/spaces/AAAARZrT2g8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=L_n_v3RfX_6GFcwLMQMEFhuPLKt19yA8sgw0tXXb8No";
+
+  var options = {
+    "method" : "post",
+    "contentType": "application/json",
+    "payload" : JSON.stringify({
+      "text" : mensagem
+    })
+  };
+
+  UrlFetchApp.fetch(urlGoogleChat, options);
+}
